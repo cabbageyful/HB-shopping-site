@@ -97,9 +97,12 @@ def add_to_cart(id):
     # TODO: Finish shopping cart functionality
 
     # The logic here should be something like:
-    session['cart'] = []
     # - add the id of the melon they bought to the cart in the session
+    if not session['cart']:
+        session["cart"] = []
+    
     session['cart'].append(id)
+    
 
     flash("Successfully added to cart")
 
